@@ -16,4 +16,4 @@ mybatis:
 server:
   port: 15666
   url_prefix: http://localhost:15666/file/get
-  base_path: /home/czl/java/gym/workplace
+  base_path: E:\Code\Java\gym_manager_web\workpalce

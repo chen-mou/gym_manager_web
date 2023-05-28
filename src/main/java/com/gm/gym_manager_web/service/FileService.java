@@ -26,14 +26,14 @@ public class FileService {
     public String save(MultipartFile file){
         String name = file.getOriginalFilename();
         String[] nas = name.split("\\.");
-        File f = new File(BASE_PATH + MD5.salt(nas[0]) + "." + nas[nas.length - 1]);
+        File f = new File(BASE_PATH.replace("\\", "/") +"/" + MD5.salt(nas[0]) + "." + nas[nas.length - 1]);
         try {
             file.transferTo(f);
         }catch (IOException e){
             e.printStackTrace();
             throw new RuntimeException(e.getMessage());
         }
-        return URL_PREFIX + f.getName();
+        return URL_PREFIX + "/" + f.getName();
     }
 
 }
